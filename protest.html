@@ -1,0 +1,662 @@
+<!doctype html><html lang="bg"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>Протест 25 ноември</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500&family=Caveat:wght@700&display=swap">
+<style>
+/* Storm hero, torn-edge bands, placard cards. Single theme. */
+:root{
+  --storm:#002A49;
+  --storm-deep:#001627;
+  --ember:#F18236;
+  --clay:#A9501A;
+  --hail:#1F6F78;
+  --hail-lt:#2B8C97;
+  --sun:#F9B640;
+  --surface:#F4EDDE;
+  --surface-dk:#E8DDC6;
+  --ink:#002A49;
+  --red:#B8302C;
+  --f-display:'Oswald','Arial Narrow',sans-serif;
+  --f-body:'Rubik',system-ui,sans-serif;
+  --f-hand:'Caveat','Segoe Script',cursive;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(88px + env(safe-area-inset-top,0px))}
+body{background:var(--surface);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--storm-deep)}
+.in{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));position:relative;z-index:2}
+a{color:var(--clay)}a:hover{color:var(--storm)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,label:has(input:focus-visible){outline:3px solid var(--sun);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);text-transform:uppercase;margin:0;text-wrap:balance}
+h2{font-size:clamp(32px,5vw,46px);line-height:1.1}
+p{margin:0 0 16px}
+.band{position:relative;padding-block:72px 112px}
+.grain::after{content:"";position:absolute;inset:0;background:var(--grain);opacity:.09;mix-blend-mode:multiply;pointer-events:none;z-index:1}
+.dark.grain::after,.hero.grain::after{mix-blend-mode:screen;opacity:.07}
+.edge{position:absolute;left:0;bottom:-1px;width:100%;height:56px;display:block;z-index:3;pointer-events:none}
+.ph{background:rgba(249,182,64,.3);outline:1.5px dashed var(--clay);outline-offset:2px;padding:0 4px;border-radius:2px}
+.dark .ph{background:rgba(249,182,64,.18);outline-color:var(--sun)}
+
+/* header */
+.head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--storm);border-bottom:3px solid var(--ember);padding-block:8px}
+.head .in{display:flex;flex-wrap:wrap;gap:4px 24px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--surface)}
+@media (max-width:520px){.head .brand img{width:72px;height:72px}}
+.brand img{width:96px;height:96px;display:block;border-radius:50%;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.brand:hover img{transform:rotate(-8deg) scale(1.08)}
+.brand span{font-family:var(--f-display);font-weight:500;font-size:20px;letter-spacing:.08em;text-transform:uppercase}
+nav{display:flex;flex-wrap:wrap;align-items:center;gap:0 18px}
+nav a.n{color:var(--surface);text-decoration:none;font-family:var(--f-display);letter-spacing:.08em;text-transform:uppercase;font-size:15px;padding:10px 2px;position:relative}
+nav a.n::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:2px;background:var(--ember);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a.n:hover{color:var(--sun)}nav a.n:hover::after{transform:scaleX(1)}
+.lang{background:transparent;border:1.5px solid rgba(244,237,222,.5);color:var(--surface);font-family:var(--f-display);letter-spacing:.1em;font-size:14px;padding:5px 10px;cursor:pointer;margin-left:2px}
+.lang:hover{border-color:var(--sun);color:var(--sun)}
+
+/* buttons */
+.btn{display:inline-block;position:relative;overflow:hidden;padding:14px 26px;background:var(--ember);color:var(--storm);font-family:var(--f-display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;font-size:18px;border:0;cursor:pointer;box-shadow:4px 4px 0 var(--clay);transition:transform .12s,box-shadow .12s,background .12s}
+.btn:hover{color:var(--storm);background:var(--sun);transform:translate(2px,2px);box-shadow:2px 2px 0 var(--clay)}
+.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--clay)}
+.tl{align-self:center;color:var(--surface);font-family:var(--f-display);letter-spacing:.06em;text-transform:uppercase;font-size:18px;text-decoration:underline;text-decoration-color:var(--ember);text-decoration-thickness:3px;text-underline-offset:6px}
+.tl:hover{color:var(--sun)}
+.btn.sm{padding:9px 16px;font-size:15px}
+.btn.ghost{background:transparent;color:var(--surface);box-shadow:inset 0 0 0 2px var(--surface)}
+.btn.ghost:hover{background:rgba(244,237,222,.12);color:var(--sun);box-shadow:inset 0 0 0 2px var(--sun)}
+.btn.ghost-dk{background:transparent;color:var(--storm);box-shadow:inset 0 0 0 2px var(--storm)}
+.btn.ghost-dk:hover{background:var(--storm);color:var(--surface);box-shadow:inset 0 0 0 2px var(--storm)}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px}
+
+/* hero */
+.hero{position:relative;color:var(--surface);background:
+  radial-gradient(ellipse 85% 42% at 50% 108%,rgba(241,110,50,.88),rgba(214,50,40,.65) 38%,rgba(170,24,44,.42) 62%,transparent 84%),
+  radial-gradient(ellipse 60% 40% at 70% 30%,rgba(43,140,151,.35),transparent 70%),
+  linear-gradient(180deg,var(--storm-deep) 0%,var(--storm) 50%,#0d4466 76%,#5a2a3a 100%);
+  overflow:hidden;padding-block:64px 150px}
+.cloud{position:absolute;left:-10%;width:120%;pointer-events:none;filter:blur(26px);will-change:transform}
+.cloud.c1{top:-6%;height:46%;opacity:.8;background:radial-gradient(ellipse 22% 55% at 12% 40%,#00101d,transparent 70%),radial-gradient(ellipse 28% 60% at 45% 30%,#001a2e,transparent 70%),radial-gradient(ellipse 24% 55% at 82% 45%,#00101d,transparent 70%);animation:drift 38s ease-in-out infinite alternate}
+.cloud.c2{top:12%;height:44%;opacity:.55;background:radial-gradient(ellipse 25% 45% at 25% 50%,#0b3f63,transparent 70%),radial-gradient(ellipse 22% 40% at 65% 40%,#0a3454,transparent 70%),radial-gradient(ellipse 20% 40% at 95% 55%,#0b3f63,transparent 70%);animation:drift 52s ease-in-out infinite alternate-reverse}
+.cloud.c3{top:48%;height:40%;opacity:.5;background:radial-gradient(ellipse 30% 40% at 20% 60%,rgba(226,80,50,.5),transparent 70%),radial-gradient(ellipse 26% 35% at 70% 70%,rgba(200,38,46,.4),transparent 70%);animation:drift 44s ease-in-out infinite alternate}
+@keyframes drift{from{margin-left:-4%}to{margin-left:4%}}
+#hail{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.hero .hand{margin:0 0 8px;font-family:var(--f-hand);font-size:clamp(24px,4vw,34px);color:var(--sun);line-height:1.2}
+.hero h1{font-weight:700;font-size:clamp(52px,11vw,136px);line-height:.98;text-shadow:0 6px 40px rgba(0,0,0,.35)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.hero h1 b{font-weight:700;color:var(--ember)}
+.scrawl{display:block;width:min(560px,80%);height:28px;margin-top:-4px;overflow:visible}
+.scrawl path{fill:none;stroke:var(--sun);stroke-width:6;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;animation:draw 1.1s .7s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero p.lead{max-width:640px;font-size:20px;margin:24px 0 28px}
+.count{display:flex;flex-wrap:wrap;gap:12px 32px;margin:0 0 32px}
+.cd{padding:0 0 0 14px;border-left:3px solid var(--ember)}
+.cd b{display:block;font-family:var(--f-display);font-size:56px;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums;color:var(--surface)}
+.cd span{font-family:var(--f-display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
+.cd-msg{font-family:var(--f-display);font-size:28px;text-transform:uppercase;color:var(--sun)}
+
+/* facts */
+.facts-band{background:linear-gradient(180deg,var(--surface),var(--surface-dk));padding-block:64px 120px}
+.acts{margin-top:28px}
+.when{margin:0;font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:clamp(34px,7.5vw,92px);line-height:1.04;color:var(--storm);transform:rotate(-1deg);transform-origin:left center;text-wrap:balance}
+.qa{margin-bottom:24px}
+.qa h3{font-size:22px;letter-spacing:.03em;margin-bottom:6px}
+.qa p{margin:0}
+.pics{background:var(--surface);padding-block:40px 120px}
+.pics h2{margin-bottom:30px}
+.pg{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:30px 24px;align-items:start}
+.pf{margin:0;min-width:0;background:#fffaf0;padding:10px;border:3px solid var(--storm);box-shadow:7px 7px 0 var(--ember)}
+.pf img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.pf.a{grid-column:span 4;transform:rotate(-.6deg)}
+.pf.a img{aspect-ratio:3/2}
+.pf.b{grid-column:span 2;transform:rotate(1deg);margin-top:34px}
+.pf.b img{aspect-ratio:4/5}
+.pf.c{grid-column:span 2;transform:rotate(-1deg)}
+.pf.d{grid-column:span 2;transform:rotate(.7deg);margin-top:22px}
+.pf.e{grid-column:span 2;transform:rotate(-.5deg)}
+@media (max-width:700px){.pg{grid-template-columns:minmax(0,1fr)}.pf.pf{grid-column:auto;margin-top:0}.pf.b img{aspect-ratio:4/3}}
+.route{background:radial-gradient(ellipse 60% 70% at 85% 30%,rgba(184,48,44,.32),transparent 70%),radial-gradient(ellipse 60% 60% at 10% 90%,rgba(31,111,120,.45),transparent 70%),linear-gradient(180deg,var(--storm),var(--storm-deep));color:var(--surface)}
+.route h2{color:var(--surface);margin-bottom:14px}
+.rt{display:flex;flex-wrap:wrap;gap:40px 56px;align-items:center}
+.rtx{flex:1 1 380px;min-width:0}
+.mapw{flex:1 1 340px;min-width:0;max-width:460px;margin:0}
+.map{display:block;width:100%;height:auto;border:2px solid rgba(244,237,222,.55);box-shadow:8px 8px 0 var(--red)}
+.mapw figcaption{margin-top:14px;font-size:14px;opacity:.8}
+.rl{font-size:20px;max-width:520px}
+.stops{margin:22px 0;display:grid;gap:0;position:relative;padding-left:34px}
+.stops::before{content:"";position:absolute;left:9px;top:14px;bottom:14px;border-left:3px dotted var(--ember)}
+.stop{position:relative;padding:8px 0}
+.stop::before{content:"";position:absolute;left:-34px;top:14px;width:20px;height:20px;border-radius:50%;border:3px solid var(--surface)}
+.stop.s1::before{background:var(--ember)}.stop.s2::before{background:var(--red)}
+.stop b{display:block;font-family:var(--f-display);font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--sun);font-weight:700}
+.stop span{display:block;font-size:18px}
+.rn{font-size:15px;opacity:.9;max-width:520px}
+.route .ph{background:rgba(249,182,64,.18);outline-color:var(--sun)}
+.route .btn.line{background:transparent;color:var(--surface);box-shadow:inset 0 0 0 2px var(--surface)}
+.route .btn.line:hover{background:rgba(244,237,222,.14);color:var(--sun);box-shadow:inset 0 0 0 2px var(--sun);transform:none}
+.ring{transform-box:fill-box;transform-origin:center;animation:ping 2.4s ease-out infinite}
+@keyframes ping{from{transform:scale(1);opacity:.9}to{transform:scale(2.4);opacity:0}}
+.res{background:linear-gradient(180deg,var(--surface-dk),var(--surface))}
+.res h2{margin-bottom:8px}
+.rsub{margin-bottom:28px}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:28px;align-items:stretch}
+.rb{min-width:0;padding:32px 28px}
+.rb h3{font-size:26px;margin-bottom:10px}
+.rb.l{background:#fffaf0;border:3px solid var(--storm);box-shadow:7px 7px 0 var(--ember)}
+.rb.d{background:linear-gradient(160deg,#0a4468,var(--storm) 60%,var(--storm-deep));color:var(--surface);box-shadow:7px 7px 0 var(--red)}
+.rb.d h3{color:var(--sun)}
+.num{display:block;font-family:var(--f-display);font-weight:700;font-size:clamp(40px,8vw,64px);line-height:1.05;letter-spacing:.02em;color:var(--ember);margin:6px 0 16px;user-select:all;font-variant-numeric:tabular-nums}
+.addr{margin-top:14px;font-size:15px}
+
+/* text columns */
+.txt{background:linear-gradient(180deg,var(--surface-dk),var(--surface) 30%)}
+.cols{display:flex;flex-wrap:wrap;gap:48px}
+.cols>div{flex:1 1 420px;min-width:0}
+.cols h2{margin-bottom:16px}
+.cols ul{margin:0;padding-left:0;list-style:none}
+.cols li{position:relative;padding-left:30px;margin-bottom:12px}
+.cols li::before{content:"";position:absolute;left:0;top:.5em;width:14px;height:14px;background:radial-gradient(circle at 35% 30%,#fff,#b9dde2 45%,var(--hail));border-radius:50%;box-shadow:0 2px 4px rgba(0,42,73,.35)}
+.cols li.or::before{background:radial-gradient(circle at 35% 30%,#ffe2b4,var(--ember) 60%,var(--clay))}
+
+/* placard maker */
+.make{background:radial-gradient(ellipse 70% 60% at 85% 20%,rgba(31,111,120,.5),transparent 70%),radial-gradient(ellipse 60% 50% at 0% 100%,rgba(200,38,46,.5),transparent 70%),linear-gradient(180deg,var(--storm),var(--storm-deep));color:var(--surface)}
+.make h2{color:var(--surface);margin-bottom:12px}
+.make .sub{max-width:560px;margin-bottom:32px}
+.mk{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.mk>*{min-width:0}
+.mk .ctl{flex:1 1 340px}
+.mk .pv{flex:1 1 340px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.fld{display:block;margin-bottom:22px}
+.fld>span,.fld legend{display:block;font-family:var(--f-display);letter-spacing:.12em;text-transform:uppercase;font-size:15px;color:var(--sun);margin-bottom:8px;padding:0}
+fieldset.fld{border:0;margin:0 0 22px;padding:0;min-width:0}
+textarea,input[type=text]{width:100%;font:500 18px/1.4 var(--f-body);color:var(--storm);background:var(--surface);border:0;border-bottom:4px solid var(--ember);padding:12px 14px;resize:vertical}
+.cnt{font-size:14px;opacity:.75;text-align:right}
+.sw{display:flex;flex-wrap:wrap;gap:10px}
+.sw label{cursor:pointer}
+.sw input{position:absolute;opacity:0;width:1px;height:1px}
+.sw i{display:block;width:54px;height:54px;border:3px solid transparent;box-shadow:0 0 0 2px rgba(244,237,222,.35);transition:transform .15s}
+.sw label:hover i{transform:translateY(-3px) rotate(-3deg)}
+.sw input:checked+i{box-shadow:0 0 0 3px var(--sun);transform:scale(1.08)}
+.sw input:focus-visible+i{outline:3px solid var(--sun);outline-offset:4px}
+.ex{display:flex;flex-wrap:wrap;gap:8px}
+.ex button{font:500 14px var(--f-body);color:var(--surface);background:rgba(244,237,222,.1);border:1px solid rgba(244,237,222,.35);padding:6px 12px;cursor:pointer;transition:background .2s}
+.ex button:hover{background:rgba(244,237,222,.22)}
+.stage{position:relative;width:min(100%,360px);padding-top:6px;transform:rotate(-1.6deg);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.stage:hover{transform:rotate(0)}
+.stage::after{content:"";position:absolute;left:50%;bottom:-110px;width:14px;height:130px;margin-left:-7px;background:linear-gradient(90deg,#a8793f,#d6a566 45%,#8a5f2c);z-index:-1}
+#plc{display:block;width:100%;height:auto;box-shadow:0 24px 40px -10px rgba(0,0,0,.6)}
+.pv{padding-bottom:100px}
+.out{width:min(100%,360px);text-align:center}
+.out img{width:100%;height:auto;margin-top:12px;box-shadow:0 10px 24px rgba(0,0,0,.4)}
+.out small{display:block;margin-top:8px;opacity:.8;font-size:14px}
+
+/* join */
+.join{background:radial-gradient(ellipse 60% 70% at 15% 0%,rgba(249,182,64,.7),transparent 70%),linear-gradient(160deg,#f59a4d,#ee7436 28%,#d9461f 55%,#c0302b 80%,#9e2430);color:var(--storm)}
+.join h2{margin-bottom:24px}
+.cards{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 28px;align-items:start}
+.card:nth-child(1){grid-column:1;grid-row:1}
+.card:nth-child(2){grid-column:2;grid-row:1/3}
+.card:nth-child(3){grid-column:1;grid-row:2}
+.card:nth-child(1) h3{font-size:clamp(52px,8vw,88px);line-height:1}
+@media (max-width:760px){.cards{grid-template-columns:minmax(0,1fr)}.card:nth-child(n){grid-column:1;grid-row:auto}}
+.card{position:relative;min-width:0;padding:30px 24px 24px;background:linear-gradient(180deg,#fbf6ea,var(--surface));box-shadow:0 18px 28px -12px rgba(90,40,10,.55);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.card:nth-child(1){transform:rotate(-1.4deg)}.card:nth-child(2){transform:rotate(1deg)}.card:nth-child(3){transform:rotate(-.6deg)}
+.card::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:26px;margin-left:-42px;background:rgba(249,182,64,.7);transform:rotate(-3deg);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.card h3{font-size:28px;margin-bottom:8px}
+.card p{margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-block;padding:6px 14px;font:500 14px var(--f-body);border:2px solid var(--storm);transition:background .15s,color .15s}
+.chips input:checked+span{background:var(--storm);color:var(--surface)}
+.chips input:focus-visible+span{outline:3px solid var(--sun);outline-offset:2px}
+.card textarea{font-size:15px;border-bottom-color:var(--storm);background:#fff;min-height:96px}
+.card input[type=text]{font-size:16px;background:#fff;border-bottom-color:var(--storm);margin-bottom:10px}
+
+/* faq + checklist */
+.more{background:linear-gradient(180deg,var(--surface),var(--surface-dk))}
+.more .cols>div:first-child{flex:1 1 360px}
+.chk{list-style:none;margin:16px 0 0;padding:0}
+.chk li{padding:0;margin:0;display:block}
+.chk li::before{display:none}
+.chk label{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;margin-bottom:8px;cursor:pointer;background:rgba(255,255,255,.55);transition:background .2s}
+.chk label:hover{background:#fff}
+.chk input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--hail);flex:none}
+.chk input:checked+span{text-decoration:line-through;opacity:.55}
+
+/* footer */
+.foot{background:linear-gradient(180deg,var(--storm),var(--storm-deep));color:var(--surface);padding-block:48px max(48px,env(safe-area-inset-bottom,0px))}
+.foot .in{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center}
+.foot a{color:var(--surface)}.foot a:hover{color:var(--sun)}
+.foot .name{font-family:var(--f-display);font-size:26px;letter-spacing:.06em;text-transform:uppercase;color:var(--ember);text-decoration:none}
+.help{flex-basis:100%;border-top:1px solid rgba(244,237,222,.25);padding-top:16px;font-size:15px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;background:var(--storm);color:var(--surface);border-left:5px solid var(--ember);padding:12px 20px;font-size:15px;z-index:70;pointer-events:none;transition:opacity .25s,transform .25s;max-width:calc(100% - 32px)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+.rv{transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .8s}
+.rv.pre{transform:translateY(28px);opacity:.4}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .scrawl path{stroke-dashoffset:0}
+  .rv.pre{transform:none;opacity:1}
+}
+@media (max-width:520px){
+  .count{gap:12px 22px}.cd b{font-size:38px}
+  nav a.n{display:none}
+  .head .in{flex-wrap:nowrap}
+  .brand span{font-size:17px}
+}
+</style>
+
+<header class="head">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="Люта Хала, начало"><img src="logo.webp" alt="Люта Хала"></a>
+    <nav aria-label="Основно меню">
+      <a class="n" href="index.html" data-en="Home">Начало</a>
+      <a class="n" href="#tabeli" data-en="Make a sign">Направи плакат</a>
+      <a class="n" href="#faq" data-en="Questions">Въпроси</a>
+      <a class="n" href="https://www.instagram.com/lyuta.hala/">Instagram</a>
+      <a class="btn sm" href="#info" data-en="Protest 25.11">Протест 25.11</a>
+      <button class="lang" id="lang" type="button" aria-label="Switch language / Смени езика">EN</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero grain" id="top">
+  <div class="cloud c1" data-p=".12"></div>
+  <div class="cloud c2" data-p=".22"></div>
+  <div class="cloud c3" data-p=".32"></div>
+  <canvas id="hail" aria-hidden="true"></canvas>
+  <div class="in">
+    <p class="hand" data-en="International Day for the Elimination of Violence against Women">Международен ден за борба с насилието над жени</p>
+    <h1 aria-label="25 ноември 2026"><span class="ln"><span><b>25 ноември</b></span></span><span class="ln"><span>2026</span></span></h1>
+    <svg class="scrawl" viewBox="0 0 560 28" preserveAspectRatio="none" aria-hidden="true"><path d="M4 18 C 90 4, 180 24, 280 12 S 470 6, 556 16"/></svg>
+    <p class="lead" data-en="A protest in Plovdiv against violence against women and girls. We come with signs, with our voices and with each other. Join us as you are.">Протест в Пловдив срещу насилието над жени и момичета. Идваме с плакати, с гласове и един с друг. Присъединете се такива, каквито сте.</p>
+    <div class="count" id="count" role="timer" aria-label="Време до протеста"></div>
+    <div class="btn-row">
+      <a class="btn" href="#kak" data-en="How to join">Как да се включиш</a>
+      <a class="tl" href="#tabeli" data-en="or make your own sign">или направи свой плакат</a>
+    </div>
+  </div>
+  <svg class="edge" data-fill="#F4EDDE" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+</section>
+
+<section class="facts-band band" id="info" style="position:relative">
+  <div class="in">
+    <p class="when" data-en="25.11.2026 at 18:00<br>Start: Central Post Office, main entrance">25.11.2026 в 18:00 ч.<br>Начало: Централна поща, главен вход</p>
+    <div class="acts btn-row rv">
+      <a class="btn sm" id="gcal" href="#info" target="_blank" rel="noopener" data-en="Add to calendar">Добави в календара</a>
+      <a class="btn sm ghost-dk" id="gmap" href="#info" target="_blank" rel="noopener" data-en="Open in maps">Отвори в карти</a>
+      <button class="btn sm ghost-dk" id="cpaddr" type="button" data-en="Copy address">Копирай адреса</button>
+      <button class="btn sm ghost-dk" id="cpshare" type="button" data-en="Copy text to share">Копирай текст за споделяне</button>
+    </div>
+  </div>
+  <svg class="edge" data-fill="#002A49" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+</section>
+
+<section class="band route dark grain" id="marshrut">
+  <div class="in rt">
+    <div class="rtx">
+      <h2 data-en="A peaceful march">Мирно шествие</h2>
+      <p class="rl" data-en="The protest is a peaceful march from the Central Post Office to Rimski Stadion Square.">Протестът е под формата на мирно шествие от Централна поща до площад „Римски стадион“.</p>
+      <div class="stops">
+        <div class="stop s1"><b data-en="Start · 18:00">Начало · 18:00 ч.</b><span data-en="Central Post Office, main entrance">Централна поща, главен вход</span></div>
+        <div class="stop s2"><b data-en="End of the march">Край на шествието</b><span data-en="Rimski Stadion Square">площад „Римски стадион“</span></div>
+      </div>
+      <p class="rn"><span data-en="About 0.6 km in a straight line. The real route along the streets is a little longer.">Около 0,6 км по права линия. Реалният маршрут по улиците е малко по-дълъг.</span> <b style="color:var(--sun)" data-en="Departure time: 18:30">Час на тръгване: 18:30 ч.</b></p>
+      <div class="btn-row">
+        <a class="btn sm" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.1422711,24.7502653&amp;destination=42.1476578,24.7479634&amp;travelmode=walking" target="_blank" rel="noopener" data-en="See the route in Google Maps">Виж маршрута в Google Maps</a>
+        <a class="btn sm line" href="https://maps.app.goo.gl/pVyLoBPry6gykygx9" target="_blank" rel="noopener" data-en="Starting point">Мястото на началото</a>
+        <a class="btn sm line" href="https://maps.app.goo.gl/mrid2W3c7HEn4onBA" target="_blank" rel="noopener" data-en="Rimski Stadion Square">Площад „Римски стадион“</a>
+      </div>
+    </div>
+    <figure class="mapw">
+      <svg class="map" viewBox="0 0 360 460" role="img" aria-label="Схематична карта на шествието от Централна поща до площад Римски стадион">
+        <defs>
+          <radialGradient id="mgrad" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#0d4466"/><stop offset="1" stop-color="#001627"/></radialGradient>
+          <pattern id="mgrid" width="36" height="36" patternUnits="userSpaceOnUse" patternTransform="rotate(-14)"><path d="M36 0H0V36" fill="none" stroke="#F4EDDE" stroke-opacity=".07" stroke-width="1"/></pattern>
+        </defs>
+        <rect width="360" height="460" fill="url(#mgrad)"/>
+        <rect width="360" height="460" fill="url(#mgrid)"/>
+        <g fill="none" stroke="#2B8C97" stroke-opacity=".28" stroke-width="3" stroke-linecap="round">
+          <path d="M20 120 L120 150 L240 120 L340 160"/>
+          <path d="M30 300 L130 330 L260 290 L345 320"/>
+          <path d="M250 30 L270 130 L300 260 L290 430"/>
+          <path d="M60 30 L50 140 L70 260 L60 440"/>
+          <path d="M20 215 L150 205 L345 225"/>
+        </g>
+        <path d="M210 380 C 206 300, 140 310, 148 235 S 112 150, 115 80" fill="none" stroke="#B8302C" stroke-width="12" stroke-linecap="round" stroke-opacity=".38"/>
+        <path d="M210 380 C 206 300, 140 310, 148 235 S 112 150, 115 80" fill="none" stroke="#F18236" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 11" class="rdash"/>
+        <g class="walkers" fill="#F9B640">
+          <circle r="4.5"><animateMotion dur="11s" begin="0s" repeatCount="indefinite" path="M210 380 C 206 300, 140 310, 148 235 S 112 150, 115 80"/></circle>
+          <circle r="4.5"><animateMotion dur="11s" begin="-2.2s" repeatCount="indefinite" path="M210 380 C 206 300, 140 310, 148 235 S 112 150, 115 80"/></circle>
+          <circle r="4.5"><animateMotion dur="11s" begin="-4.4s" repeatCount="indefinite" path="M210 380 C 206 300, 140 310, 148 235 S 112 150, 115 80"/></circle>
+          <circle r="4.5"><animateMotion dur="11s" begin="-6.6s" repeatCount="indefinite" path="M210 380 C 206 300, 140 310, 148 235 S 112 150, 115 80"/></circle>
+          <circle r="4.5"><animateMotion dur="11s" begin="-8.8s" repeatCount="indefinite" path="M210 380 C 206 300, 140 310, 148 235 S 112 150, 115 80"/></circle>
+        </g>
+        <circle class="ring" cx="210" cy="380" r="14" fill="none" stroke="#F18236" stroke-width="3"/>
+        <circle cx="210" cy="380" r="11" fill="#F18236" stroke="#F4EDDE" stroke-width="3"/>
+        <circle cx="115" cy="80" r="11" fill="#B8302C" stroke="#F4EDDE" stroke-width="3"/>
+        <circle cx="115" cy="80" r="4" fill="#F4EDDE"/>
+        <g font-family="Oswald,Arial Narrow,sans-serif" fill="#F4EDDE">
+          <text x="190" y="376" font-size="17" font-weight="700" letter-spacing="1.2" text-anchor="end" fill="#F9B640">НАЧАЛО · 18:00</text>
+          <text x="190" y="395" font-size="14" letter-spacing=".6" text-anchor="end">Централна поща</text>
+          <text x="134" y="76" font-size="17" font-weight="700" letter-spacing="1.2" fill="#F9B640">КРАЙ</text>
+          <text x="134" y="95" font-size="14" letter-spacing=".6">пл. „Римски стадион“</text>
+          <text x="24" y="448" font-size="12" letter-spacing=".5" fill-opacity=".8">200 м</text>
+          <text x="336" y="448" font-size="11" letter-spacing=".5" text-anchor="end" fill-opacity=".6">схематично</text>
+          <text x="324" y="64" font-size="14" font-weight="700" text-anchor="middle">С</text>
+        </g>
+        <path d="M324 22 L331 44 L324 40 L317 44 Z" fill="#F4EDDE"/>
+        <path d="M24 428 H124 M24 423 V433 M124 423 V433" stroke="#F4EDDE" stroke-width="2" fill="none" stroke-opacity=".8"/>
+      </svg>
+      <figcaption data-en="Schematic map. Dots show the direction of the march. It does not follow the streets exactly.">Схематична карта. Точките показват посоката на шествието. Не следва точно улиците.</figcaption>
+    </figure>
+  </div>
+  <svg class="edge" data-fill="#E8DDC6" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+</section>
+
+<section class="band txt grain">
+  <div class="in cols">
+    <div class="rv">
+      <h2 data-en="Why we are coming out">Защо излизаме</h2>
+      <p data-en="Silence is dangerous. Too many of us were taught to shrink, to endure and to disappear. On 25 November we take to the streets for those who can no longer speak, and for everyone looking for a way to change the system. We want to be heard, and we want violence to be recognised as a public problem, not a personal drama.">Тишината е опасна. Твърде много от нас са учени да се свиват, да издържат и да изчезват. На 25 ноември излизаме на улицата за онези, които вече не могат да говорят, и за всички, които търсят начин да променят системата. Искаме да бъдем чути и насилието да бъде признато за обществен проблем, а не за лична драма.</p>
+    </div>
+    <div class="rv">
+      <h2 data-en="What to expect">Какво да очакваш</h2>
+      <ul>
+        <li data-en="A peaceful march from the Central Post Office to Rimski Stadion Square">Мирно шествие от Централна поща до площад „Римски стадион“</li>
+        <li data-en="Speakers and first-person stories">Говорители и разкази от първо лице</li>
+        <li data-en="Signs and materials on site; you can bring your own">Плакати и материали на място; може да донесеш и своя</li>
+        <li class="or" data-en="Orange is the colour of the day. Wear something orange.">Оранжевото е цветът на деня - облечи нещо оранжево</li>
+      </ul>
+    </div>
+  </div>
+  <svg class="edge" data-fill="#F4EDDE" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+</section>
+
+<section class="band pics" id="snimki">
+  <div class="in">
+    <h2 data-en="From our previous protests and marches">От предишните ни протести и шествия</h2>
+    <div class="pg">
+      <figure class="pf a rv"><img src="protest-march.webp" width="1024" height="682" loading="lazy" alt="Шествие по пешеходна улица вечер: хора с плакати „Мълчанието не е решение“, „Долу патриархата“ и „Истинските мъже са феминисти“"></figure>
+      <figure class="pf b rv"><img src="protest-shoes.webp" width="1024" height="768" loading="lazy" alt="Хора с плакати зад бяло платно с наредени обувки на улицата"></figure>
+      <figure class="pf c rv"><img src="protest-candles.jpg" width="516" height="387" loading="lazy" alt="Свещи върху нарисувани уста на паважа"></figure>
+      <figure class="pf d rv"><img src="protest-square.webp" width="1024" height="768" loading="lazy" alt="Събиране на площада вечер с плакати и платно с обувки"></figure>
+      <figure class="pf e rv"><img src="protest-banner.jpg" width="516" height="387" loading="lazy" alt="Шествие с банер „Смелостта да говорим за насилието е първата стъпка към промяната“"></figure>
+    </div>
+  </div>
+  <svg class="edge" data-fill="#002A49" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+</section>
+
+<section class="band make dark grain" id="tabeli">
+  <div class="in">
+    <h2 data-en="Make your sign">Направи своя плакат</h2>
+    <p class="sub" data-en="Write a line, pick a colour, save the picture. Print it, or post it to your story and tag @lyuta.hala.">Напиши един ред, избери цвят, запази картинката. Разпечатай я или я сподели в историята си и отбележи @lyuta.hala.</p>
+    <div class="mk">
+      <div class="ctl">
+        <label class="fld"><span data-en="Your words">Твоите думи</span>
+          <textarea id="pt" rows="3" maxlength="80">НЕ СИ САМА. НЕ СИ САМ.</textarea>
+          <div class="cnt"><span id="pn">0</span>/80</div>
+        </label>
+        <fieldset class="fld"><legend data-en="Colour">Цвят</legend>
+          <div class="sw" id="sw">
+            <label><input type="radio" name="pc" value="0" checked aria-label="Оранжев"><i style="background:linear-gradient(135deg,#f9a050,#F18236)"></i></label>
+            <label><input type="radio" name="pc" value="1" aria-label="Кремав"><i style="background:linear-gradient(135deg,#fffaf0,#F4EDDE)"></i></label>
+            <label><input type="radio" name="pc" value="2" aria-label="Тъмносин"><i style="background:linear-gradient(135deg,#0a4468,#002A49)"></i></label>
+            <label><input type="radio" name="pc" value="3" aria-label="Тюркоаз"><i style="background:linear-gradient(135deg,#2B8C97,#1F6F78)"></i></label>
+          </div>
+        </fieldset>
+        <div class="fld"><span data-en="Ideas">Идеи</span>
+          <div class="ex" id="ex">
+            <button type="button">Тишината е опасна</button>
+            <button type="button">Нито Една Повече!</button>
+            <button type="button">Не е твоя вината</button>
+            <button type="button">Стига толкова</button>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn sm" id="mkimg" type="button" data-en="Save as picture">Запази като картинка</button>
+          <button class="btn sm ghost" id="mkcp" type="button" data-en="Copy image">Копирай картинката</button>
+        </div>
+      </div>
+      <div class="pv">
+        <div class="stage"><canvas id="plc" width="900" height="1125" role="img" aria-label="Преглед на плаката"></canvas></div>
+        <div class="out" id="out" hidden>
+          <img id="outimg" alt="Готовият плакат">
+          <small data-en="Press and hold the picture (phone) or right-click it (computer) and choose Save image.">Задръж върху картинката (телефон) или натисни десен бутон (компютър) и избери „Запази изображението“.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="edge" data-fill="#F59A4D" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+</section>
+
+<section class="band join grain" id="kak">
+  <div class="in">
+    <h2 data-en="How to join">Как да се включиш</h2>
+    <div class="cards">
+      <div class="card rv"><h3 data-en="Come">Ела</h3><p data-en="No registration is needed to take part in the peaceful march. Just join in and bring friends.">Не е нужна регистрация за участие в мирното шествие. Просто се включи и доведи приятели.</p></div>
+      <div class="card rv">
+        <h3 data-en="Help">Помогни</h3>
+        <p data-en="We are looking for volunteers for signs, organising and photography. Fill in the form and tell us how you can help.">Търсим доброволци за плакати, организация и снимки. Попълни формуляра и ни кажи с какво можеш да помогнеш.</p>
+        <div class="btn-row"><a class="btn" href="https://forms.gle/fZSYnaWVcbFGt42q8" target="_blank" rel="noopener" data-en="Fill in the form">Попълни формуляра</a></div>
+        <p style="margin:16px 0 0;font-size:15px"><span data-en="Questions? Write to">Въпроси? Пиши на</span> <span style="user-select:all">lyutahala@gmail.com</span> <span data-en="or on">или в</span> <a href="https://www.instagram.com/lyuta.hala/">Instagram</a>.</p>
+      </div>
+      <div class="card rv"><h3 data-en="Share">Сподели</h3><p data-en='Follow <a href="https://www.instagram.com/lyuta.hala/">@lyuta.hala</a> for news and share the event.'>Следи <a href="https://www.instagram.com/lyuta.hala/">@lyuta.hala</a> за новини и сподели събитието.</p><button class="btn sm ghost-dk" id="cpshare2" type="button" data-en="Copy text to share">Копирай текст за споделяне</button></div>
+    </div>
+  </div>
+  <svg class="edge" data-fill="#F4EDDE" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+</section>
+
+<section class="band more" id="faq" style="padding-bottom:72px">
+  <div class="in cols">
+    <div class="rv">
+      <h2 data-en="Before you come">Преди да дойдеш</h2>
+      <p data-en="Tick off what you have ready. We remember it on this device.">Отбележи какво си приготвил/а. Запомняме го на това устройство.</p>
+      <ul class="chk" id="chk">
+        <li><label><input type="checkbox"><span data-en="Something orange to wear">Нещо оранжево за обличане</span></label></li>
+        <li><label><input type="checkbox"><span data-en="A sign (made here or at home)">Плакат (направен тук или вкъщи)</span></label></li>
+        <li><label><input type="checkbox"><span data-en="Someone to come with, or a plan to meet people there">Човек, с когото да дойдеш, или план да се срещнеш с хора там</span></label></li>
+        <li><label><input type="checkbox"><span data-en="Water and warm clothes for a November evening">Вода и топли дрехи за ноемврийска вечер</span></label></li>
+      </ul>
+    </div>
+    <div class="rv">
+      <h2 data-en="Questions">Въпроси</h2>
+      <div class="qa"><h3 data-en="Do I need to register?">Трябва ли да се регистрирам?</h3><p data-en="No. Just come.">Не. Просто ела.</p></div>
+      <div class="qa"><h3 data-en="Can I bring my own sign to the protest?">Мога ли да донеса свой плакат на протеста?</h3><p data-en="Yes, as long as it is relevant to the theme of the protest. You can also borrow one of the ready-made signs.">Да, стига да е релевантен по темата на протеста. Можеш да заемеш и някой от готовите плакати също.</p></div>    </div>
+  </div>
+</section>
+
+<section class="band res" id="resursi">
+  <div class="in">
+    <h2 data-en="Useful resources">Полезни ресурси</h2>
+    <p class="rsub" data-en='From last year&#39;s campaign with the <a href="https://pogled.org/" target="_blank" rel="noopener">Pogled Foundation</a>.'>От миналогодишната ни кампания с <a href="https://pogled.org/" target="_blank" rel="noopener">Фондация „Поглед“</a>.</p>
+    <div class="rgrid">
+      <div class="rb l rv">
+        <h3 data-en="Campaign resources">Материали от кампанията</h3>
+        <p data-en="All the resources from the campaign in one place.">Всички ресурси от кампанията на едно място.</p>
+        <a class="btn" href="https://linktr.ee/pogled.campaign" target="_blank" rel="noopener" data-en="Open the resources">Отвори ресурсите</a>
+      </div>
+      <div class="rb d rv">
+        <h3 data-en="National helpline for victims of violence">Национална линия за пострадали от насилие</h3>
+        <span class="num">0800 1 86 76</span>
+        <button class="btn sm" id="cphelp" type="button" data-en="Copy the number">Копирай номера</button>
+      </div>
+    </div>
+  </div>
+  <svg class="edge" data-fill="#002A49" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path/></svg>
+</section>
+
+<footer class="foot">
+  <div class="in">
+    <a class="name" href="#top">Люта Хала</a>
+    <span><a href="https://www.instagram.com/lyuta.hala/">Instagram</a> · <a href="https://luytahala.substack.com/">Substack</a> · <span style="user-select:all">lyutahala@gmail.com</span></span>
+    <p class="help" data-en='If you need support now: National helpline for victims of violence, <b style="user-select:all">0800 1 86 76</b>'>Ако имаш нужда от подкрепа сега: Национална линия за пострадали от насилие, <b style="user-select:all">0800 1 86 76</b></p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var lang='bg';
+var $=function(id){return document.getElementById(id)};
+function toast(t){var el=$('toast');el.textContent=t;el.classList.add('on');clearTimeout(toast._t);toast._t=setTimeout(function(){el.classList.remove('on')},2400)}
+function copy(text,msgBg,msgEn){
+  function ok(){toast(lang==='en'?msgEn:msgBg)}
+  function fb(){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();var good=false;try{good=document.execCommand('copy')}catch(e){}document.body.removeChild(ta);if(good)ok();else toast(lang==='en'?'Select and copy the text manually':'Маркирай и копирай текста ръчно')}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok,fb)}else fb();
+}
+
+/* jagged torn edges */
+function seed(n){var s=n;return function(){s=(s*9301+49297)%233280;return s/233280}}
+document.querySelectorAll('svg.edge').forEach(function(svg,i){
+  var r=seed(7+i*13),d='M0 60 L0 ',pts=[],x;
+  for(x=0;x<=1200;x+=30){pts.push([x,16+r()*34])}
+  d='M0 60 L'+pts.map(function(p){return p[0]+' '+p[1].toFixed(1)}).join(' L')+' L1200 60 Z';
+  svg.querySelector('path').setAttribute('d',d);
+  svg.querySelector('path').setAttribute('fill',svg.dataset.fill);
+});
+
+/* language */
+var langEls=document.querySelectorAll('[data-en]');
+function setLang(l){
+  lang=l;document.documentElement.lang=l;
+  langEls.forEach(function(el){if(el._bg===undefined)el._bg=el.innerHTML;el.innerHTML=(l==='en')?el.dataset.en:el._bg});
+  $('lang').textContent=l==='en'?'БГ':'EN';
+  tick();
+  try{localStorage.setItem('lh-lang',l)}catch(e){}
+}
+$('lang').addEventListener('click',function(){setLang(lang==='bg'?'en':'bg')});
+
+/* countdown */
+var T=new Date('2026-11-25T18:00:00+02:00').getTime();
+var cd=$('count');
+function pad(n){return n<10?'0'+n:''+n}
+function tick(){
+  var d=T-Date.now();
+  if(d<=0){cd.innerHTML='<span class="cd-msg">'+(lang==='en'?'Today is the day':'Днес е денят')+'</span>';return}
+  var days=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);
+  var L=lang==='en'?['days','hours','min','sec']:['дни','часа','мин','сек'];
+  var v=[days,pad(h),pad(m),pad(s)];
+  cd.innerHTML=v.map(function(x,i){return '<div class="cd"><b>'+x+'</b><span>'+L[i]+'</span></div>'}).join('');
+}
+tick();setInterval(tick,1000);
+
+/* calendar, maps, share */
+var place='Централна поща, главен вход, Пловдив';
+$('gcal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Протест срещу насилието над жени')+'&dates=20261125T160000Z/20261125T180000Z&location='+encodeURIComponent(place)+'&details='+encodeURIComponent('Люта Хала. Мирно шествие от Централна поща до площад Римски стадион. Облечи нещо оранжево.');
+$('gmap').href='https://maps.app.goo.gl/pVyLoBPry6gykygx9';
+$('cphelp').addEventListener('click',function(){copy('0800 1 86 76','Номерът е копиран','Number copied')});
+$('cpaddr').addEventListener('click',function(){copy(place,'Адресът е копиран','Address copied')});
+function shareTxt(){copy('Протест в Пловдив срещу насилието над жени и момичета. 25 ноември 2026, 18:00 ч., начало пред Централна поща, главен вход, и мирно шествие до площад Римски стадион. Облечи нещо оранжево. Не е нужна регистрация. Повече: @lyuta.hala','Текстът е копиран. Постави го където искаш.','Text copied. Paste it anywhere.')}
+$('cpshare').addEventListener('click',shareTxt);$('cpshare2').addEventListener('click',shareTxt);
+
+/* checklist */
+var boxes=document.querySelectorAll('#chk input');
+try{var sv=JSON.parse(localStorage.getItem('lh-chk')||'[]');boxes.forEach(function(b,i){b.checked=!!sv[i]})}catch(e){}
+boxes.forEach(function(b){b.addEventListener('change',function(){try{localStorage.setItem('lh-chk',JSON.stringify([].map.call(boxes,function(x){return x.checked})))}catch(e){}})});
+
+/* placard maker */
+var cv=$('plc'),cx=cv.getContext('2d');
+var PAL=[{bg:['#f9a050','#F18236'],fg:'#002A49',ac:'#002A49'},{bg:['#fffaf0','#F4EDDE'],fg:'#002A49',ac:'#F18236'},{bg:['#0a4468','#002A49'],fg:'#F9B640',ac:'#F18236'},{bg:['#2B8C97','#1F6F78'],fg:'#F4EDDE',ac:'#F9B640'}];
+function wrap(words,font,maxW){
+  cx.font=font;var lines=[],cur='';
+  for(var i=0;i<words.length;i++){
+    var w=words[i],test=cur?cur+' '+w:w;
+    if(cx.measureText(test).width<=maxW||!cur){cur=test}else{lines.push(cur);cur=w}
+  }
+  if(cur)lines.push(cur);return lines;
+}
+function draw(){
+  var W=cv.width,H=cv.height,p=PAL[+document.querySelector('#sw input:checked').value];
+  var g=cx.createLinearGradient(0,0,W,H);g.addColorStop(0,p.bg[0]);g.addColorStop(1,p.bg[1]);
+  cx.fillStyle=g;cx.fillRect(0,0,W,H);
+  cx.strokeStyle=p.ac;cx.lineWidth=10;cx.strokeRect(34,34,W-68,H-68);
+  var txt=$('pt').value.trim().toUpperCase()||'ТВОИТЕ ДУМИ';
+  var words=txt.split(/\s+/),maxW=W-170,maxH=H-440,size=260,lines,lh;
+  for(;size>=56;size-=6){
+    lines=wrap(words,'700 '+size+'px Oswald, "Arial Narrow", sans-serif',maxW);
+    lh=size*1.08;
+    if(lines.length*lh<=maxH){
+      var wide=lines.every(function(l){return cx.measureText(l).width<=maxW});
+      if(wide)break;
+    }
+  }
+  cx.font='700 '+size+'px Oswald, "Arial Narrow", sans-serif';
+  cx.fillStyle=p.fg;cx.textAlign='center';cx.textBaseline='middle';
+  var total=lines.length*lh,y0=(H-200)/2-total/2+lh/2+30;
+  lines.forEach(function(l,i){cx.fillText(l,W/2,y0+i*lh)});
+  cx.fillStyle=p.ac;cx.fillRect(W/2-90,H-250,180,8);
+  cx.fillStyle=p.fg;cx.font='500 40px Oswald, "Arial Narrow", sans-serif';
+  cx.fillText('25.11.2026 · 18:00 · ПЛОВДИВ',W/2,H-175);
+  cx.font='700 56px Caveat, cursive';cx.fillStyle=p.ac===p.fg?p.fg:p.ac;
+  cx.fillText('Люта Хала',W/2,H-105);
+}
+function redraw(){$('pn').textContent=$('pt').value.length;draw()}
+$('pt').addEventListener('input',redraw);
+document.querySelectorAll('#sw input').forEach(function(i){i.addEventListener('change',redraw)});
+document.querySelectorAll('#ex button').forEach(function(b){b.addEventListener('click',function(){var t=b.textContent;$('pt').value=/[.!?]$/.test(t)?t:t+'.';redraw()})});
+$('mkimg').addEventListener('click',function(){
+  draw();
+  $('outimg').src=cv.toDataURL('image/png');$('out').hidden=false;
+  $('out').scrollIntoView({behavior:RM?'auto':'smooth',block:'nearest'});
+});
+$('mkcp').addEventListener('click',function(){
+  draw();
+  if(navigator.clipboard&&window.ClipboardItem){
+    cv.toBlob(function(b){
+      navigator.clipboard.write([new ClipboardItem({'image/png':b})]).then(function(){toast(lang==='en'?'Image copied':'Картинката е копирана')},function(){$('mkimg').click();toast(lang==='en'?'Copy not allowed here. Save the picture instead.':'Копирането не е разрешено тук. Запази картинката.')});
+    });
+  }else{$('mkimg').click()}
+});
+redraw();
+if(document.fonts&&document.fonts.load){
+  Promise.all([document.fonts.load('700 100px Oswald','Аб'),document.fonts.load('500 40px Oswald','Аб'),document.fonts.load('700 56px Caveat','Аб')]).then(draw,function(){});
+  if(document.fonts.ready)document.fonts.ready.then(draw);
+}
+
+if(RM)document.querySelectorAll('.map .walkers').forEach(function(g){g.remove()});
+
+/* hail */
+var hc=$('hail'),hx=hc.getContext('2d'),hero=$('top'),stones=[],hw=0,hh=0,vis=true;
+function hsize(){var dpr=Math.min(window.devicePixelRatio||1,2);hw=hero.clientWidth;hh=hero.clientHeight;hc.width=hw*dpr;hc.height=hh*dpr;hx.setTransform(dpr,0,0,dpr,0,0)}
+function mk(top){return{x:Math.random()*(hw+200)-100,y:top?Math.random()*hh:-20,l:6+Math.random()*16,v:3+Math.random()*5,a:.18+Math.random()*.4}}
+function hinit(){hsize();stones=[];var n=Math.round(Math.min(70,hw/16));for(var i=0;i<n;i++)stones.push(mk(true))}
+function hframe(){
+  hx.clearRect(0,0,hw,hh);
+  for(var i=0;i<stones.length;i++){
+    var s=stones[i],fade=Math.max(0,1-s.y/(hh*.8));
+    hx.strokeStyle='rgba(220,238,242,'+(s.a*fade).toFixed(3)+')';hx.lineWidth=1.6;hx.lineCap='round';
+    hx.beginPath();hx.moveTo(s.x,s.y);hx.lineTo(s.x-s.l*.35,s.y+s.l);hx.stroke();
+    if(!RM){s.y+=s.v;s.x-=s.v*.35;if(s.y>hh*.85||s.x<-40)stones[i]=mk(false)}
+  }
+  if(!RM&&vis)requestAnimationFrame(hframe);
+}
+hinit();hframe();
+window.addEventListener('resize',function(){hinit();if(RM)hframe()});
+if('IntersectionObserver' in window){
+  new IntersectionObserver(function(e){var was=vis;vis=e[0].isIntersecting;if(vis&&!was&&!RM)hframe()}).observe(hero);
+}
+
+/* pointer glow + parallax */
+if(!RM){
+  var clouds=document.querySelectorAll('.cloud'),tk=false;
+  window.addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){var y=window.scrollY;clouds.forEach(function(c){c.style.transform='translateY('+(y*c.dataset.p).toFixed(1)+'px)'});tk=false})},{passive:true});
+}
+
+/* reveal on scroll (only below the fold; everything is readable without it) */
+if(!RM&&'IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){
+    if(el.getBoundingClientRect().top>window.innerHeight){el.classList.add('pre');io.observe(el)}
+  });
+}
+
+try{var sl=localStorage.getItem('lh-lang');if(sl==='en')setLang('en')}catch(e){}
+})();
+</script>
+</html>
